@@ -1,174 +1,143 @@
-\# Cybersecurity Labs
 
 
+# Cybersecurity Labs
 
-Hands-on cybersecurity labs focused on vulnerability identification, security testing, remediation, and technical documentation.
-
-
+Hands-on cybersecurity labs focused on vulnerability identification, security testing, defensive monitoring, remediation, and technical documentation.
 
 These projects are performed in an isolated VirtualBox home lab and are designed to demonstrate practical cybersecurity and IT skills through documented exercises and evidence.
 
+---
 
+## Lab Environment
 
-\---
+| System       | Role                            | IP Address       |
+| ------------ | ------------------------------- | ---------------- |
+| Kali Linux   | Security testing workstation    | `192.168.56.104` |
+| Ubuntu Linux | Web application / server target | `192.168.56.101` |
+| Windows 11   | Administration / client system  | `192.168.56.106` |
 
+### Virtualization
 
+* VirtualBox
+* Host-Only Networking
+* Isolated lab environment
 
-\## Lab Environment
+---
 
+## Completed Labs
 
-
-| System | Role | IP Address |
-
-|---|---|---|
-
-| Kali Linux | Security testing workstation | 192.168.56.104 |
-
-| Ubuntu Linux | Web application / server target | 192.168.56.101 |
-
-| Windows 11 | Administration / client system | 192.168.56.106 |
-
-
-
-\### Virtualization
-
-
-
-\- VirtualBox
-
-\- Host-Only Networking
-
-\- Isolated lab environment
-
-
-
-\---
-
-
-
-\## Completed Labs
-
-
-
-\### Command Injection
-
-
+### Command Injection
 
 A deliberately vulnerable PHP web application was tested for command injection.
 
+The lab demonstrates:
 
+* Establishing application baseline behavior
+* Identifying command injection
+* Demonstrating controlled command execution
+* Identifying the execution context
+* Input validation
+* Secure shell argument handling
+* Remediation verification
+* Evidence collection
+
+**Documentation:** [Command Injection Lab](documentation/command-injection-lab.md)
+
+---
+
+### Honeypot Detection & Logging
+
+A basic Python-based honeypot was deployed on Ubuntu to detect and log controlled connection attempts from a Kali Linux testing system.
 
 The lab demonstrates:
 
+* Python socket programming
+* TCP service monitoring
+* Connection detection
+* Source IP and port identification
+* Payload logging
+* Simulated SSH service banner
+* UFW firewall configuration
+* Network troubleshooting
+* Log analysis
+* Evidence collection
+* Defensive security monitoring
 
+**Documentation:** [Honeypot Lab](documentation/honeypot-lab.md)
 
-\- Establishing application baseline behavior
+**Implementation:** [honeypot.py](honeypot/honeypot.py)
 
-\- Identifying command injection
+**Sample Log:** [sample-honeypot.log](honeypot/sample-honeypot.log)
 
-\- Demonstrating controlled command execution
+---
 
-\- Identifying the execution context
-
-\- Input validation
-
-\- Secure shell argument handling
-
-\- Remediation verification
-
-\- Evidence collection
-
-
-
-\*\*Documentation:\*\* \[Command Injection Lab](documentation/command-injection-lab.md)
-
-
-
-\---
-
-
-
-\## Security Testing Methodology
-
-
+## Security Testing Methodology
 
 My labs generally follow this workflow:
 
-
-
 ```text
-
 Reconnaissance
-
-&#x20;     ↓
-
+      ↓
 Identify
-
-&#x20;     ↓
-
+      ↓
 Test
-
-&#x20;     ↓
-
+      ↓
 Validate
-
-&#x20;     ↓
-
+      ↓
 Document
-
-&#x20;     ↓
-
+      ↓
 Remediate
-
-&#x20;     ↓
-
+      ↓
 Retest
+```
 
+The goal is to demonstrate not only how a security issue can be identified, but also how it can be understood, mitigated, monitored, and verified.
 
+---
 
-The goal is to demonstrate not only how a vulnerability can be identified, but also how it can be understood, mitigated, and verified.
+## Skills Demonstrated
 
+### Cybersecurity
 
-
-\---------------------------------------------------------------------------------------------------
-
-
-
-
-
-Skills Demonstrated
-
-
-
-* Linux administration
-* Web application security
 * Vulnerability identification
 * Command injection testing
+* Honeypot deployment
+* Security monitoring
+* Log analysis
+* Defensive security
 * Input validation
 * Secure coding practices
-* Apache
-* PHP
-* Networking
-* VirtualBox
-* Security documentation
 * Evidence collection
+* Technical security documentation
+
+### Linux & Networking
+
+* Linux administration
+* TCP/IP networking
+* TCP port monitoring
+* UFW firewall configuration
+* Network troubleshooting
+* Service monitoring
+* Apache
+* VirtualBox
+* Host-only networking
+
+### Programming & Tools
+
+* Python
+* PHP
+* Socket programming
+* Netcat
+* Nmap
+* Wireshark
 * Git/GitHub
 
+---
 
+## Planned Labs
 
-\---------------------------------------------------------------------------------------------------
+Future exercises will expand into:
 
-
-
-Planned Labs
-
-
-
-Future exercises will expand into: 
-
-
-
-* Honeypot deployment
 * Linux log analysis
 * Metasploitable 2 testing
 * Privilege escalation
@@ -183,55 +152,42 @@ Future exercises will expand into:
 * IDS and anomaly detection
 * Cloud security
 
+---
 
+## Repository Structure
 
-\---------------------------------------------------------------------------------------------------
-
-
-
-Repository Structure
-
-
-
+```text
 cybersecurity-labs/
-
 │
-
 ├── documentation/
-
-│   └── command-injection-lab.md
-
+│   ├── command-injection-lab.md
+│   └── honeypot-lab.md
 │
-
+├── honeypot/
+│   ├── honeypot.py
+│   └── sample-honeypot.log
+│
 ├── screenshots/
-
-│   └── command-injection/
-
-│       ├── command-injection-fixed.png
-
-│       ├── command-injection-id.png
-
-│       └── command-injection-success.png
-
+│   ├── command-injection/
+│   │   ├── command-injection-fixed.png
+│   │   ├── command-injection-id.png
+│   │   └── command-injection-success.png
+│   │
+│   └── honeypot/
+│       ├── honeypot-connection-detected.png
+│       ├── honeypot-multiple-connections.png
+│       └── honeypot-ssh-interaction.png
 │
-
+├── .gitignore
 └── README.md
+```
 
+---
 
+## Purpose
 
-\---------------------------------------------------------------------------------------------------
+This repository serves as a practical cybersecurity portfolio demonstrating hands-on experience with security testing, Linux systems, networking, vulnerability analysis, defensive monitoring, remediation, programming, and technical documentation.
 
+All security testing is performed in controlled lab environments against intentionally vulnerable systems, simulated services, or intentionally generated test traffic.
 
-
-Purpose
-
-
-
-This repository serves as a practical cybersecurity portfolio demonstrating hands-on experience with security testing, Linux systems, networking, vulnerability analysis, remediation, and technical documentation. 
-
-
-
-All security testing is performed in controlled lab environments against intentionally vulnerable systems or applications.
-
-
-
+No unauthorized external systems are targeted.
