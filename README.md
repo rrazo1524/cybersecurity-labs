@@ -26,7 +26,7 @@ These projects are performed in an isolated VirtualBox home lab and are designed
 
 ## Completed Labs
 
-### Command Injection
+### 1. Command Injection
 
 A deliberately vulnerable PHP web application was tested for command injection.
 
@@ -45,7 +45,7 @@ The lab demonstrates:
 
 ---
 
-### Honeypot Detection & Logging
+### 2. Honeypot Detection & Logging
 
 A basic Python-based honeypot was deployed on Ubuntu to detect and log controlled connection attempts from a Kali Linux testing system.
 
@@ -68,6 +68,26 @@ The lab demonstrates:
 **Implementation:** [honeypot.py](honeypot/honeypot.py)
 
 **Sample Log:** [sample-honeypot.log](honeypot/sample-honeypot.log)
+
+---
+
+### 3. Linux Log Analysis
+
+**Focus:** Linux authentication monitoring and security event investigation
+
+This lab demonstrates analysis of Ubuntu authentication logs using `/var/log/auth.log`. Controlled SSH authentication failures were generated from Kali Linux and investigated to identify invalid usernames, recorded source addresses, timestamps, repeated authentication activity, and event frequency.
+
+**Skills demonstrated:**
+- Linux authentication log analysis
+- SSH monitoring
+- Security event investigation
+- Log filtering with grep
+- Event counting
+- Timeline analysis
+- Authentication monitoring
+- Security documentation
+
+**Documentation:** [`linux-log-analysis-lab.md`](documentation/linux-log-analysis-lab.md)
 
 ---
 
@@ -138,7 +158,6 @@ The goal is to demonstrate not only how a security issue can be identified, but 
 
 Future exercises will expand into:
 
-* Linux log analysis
 * Metasploitable 2 testing
 * Privilege escalation
 * Web application vulnerabilities
