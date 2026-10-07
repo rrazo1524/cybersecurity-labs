@@ -78,6 +78,7 @@ The lab demonstrates:
 This lab demonstrates analysis of Ubuntu authentication logs using `/var/log/auth.log`. Controlled SSH authentication failures were generated from Kali Linux and investigated to identify invalid usernames, recorded source addresses, timestamps, repeated authentication activity, and event frequency.
 
 **Skills demonstrated:**
+
 - Linux authentication log analysis
 - SSH monitoring
 - Security event investigation
@@ -88,6 +89,34 @@ This lab demonstrates analysis of Ubuntu authentication logs using `/var/log/aut
 - Security documentation
 
 **Documentation:** [`linux-log-analysis-lab.md`](documentation/linux-log-analysis-lab.md)
+
+---
+
+### 4. Metasploitable 2 Vulnerability Assessment
+
+A controlled vulnerability assessment was performed against an intentionally vulnerable Metasploitable 2 virtual machine in an isolated VirtualBox host-only network.
+
+The assessment demonstrates:
+
+* Network reconnaissance
+* Nmap service enumeration
+* Service and version identification
+* FTP banner validation
+* Vulnerability identification
+* Metasploit Framework
+* Controlled exploitation
+* Meterpreter
+* Root privilege verification
+* Linux shell verification
+* Security findings analysis
+* Evidence collection
+* Vulnerability remediation recommendations
+
+The assessment identified vsFTPd 2.3.4 on TCP port 21 and successfully demonstrated exploitation of the associated backdoor vulnerability, resulting in a Meterpreter session with root-level privileges.
+
+Documentation: Metasploitable 2 Lab
+
+Evidence: Metasploitable 2 Screenshots
 
 ---
 
@@ -158,7 +187,6 @@ The goal is to demonstrate not only how a security issue can be identified, but 
 
 Future exercises will expand into:
 
-* Metasploitable 2 testing
 * Privilege escalation
 * Web application vulnerabilities
 * Active Directory security
